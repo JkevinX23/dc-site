@@ -1,0 +1,113 @@
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #f2f2f2;
+}
+.card {
+  position: relative;
+  height: 300px;
+  height: 500px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.card .imageBox {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background: url("https://redesoberano.com.br/wp-content/uploads/elementor/thumbs/rede-soberano-porto-seguro-4-p7cp8e8e5lyvok2ykr8w802mahnz0sw4309th3s2r0.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px 15px 0 0;
+}
+
+.allContent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 150px;
+  margin-left: 15px;
+}
+
+.bundle {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 200px;
+}
+
+.bundle span {
+  background-color: #3f95fa;
+  color: #fff;
+  max-width: 40px;
+  border-radius: 4px;
+  padding: 2px 5px;
+  margin-left: 15px;
+  margin-top: -250px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.allContent .label {
+  color: #666;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.allContent .title {
+  color: #444;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.allContent .seeMore {
+  display: flex;
+  padding: 5px 10px;
+  border-radius: 4px 0px 0px 4px;
+  background-color: #3f95fa;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  width: 120px;
+  text-align: center;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+}
+
+.allContent .seeMore:hover {
+  background-color: #fff;
+  color: #3f95fa;
+  border: 1px solid #3f95fa;
+  border-right: none;
+  cursor: pointer;
+}
+
+.body .card .imageBox .bullet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  position: absolute;
+  top: 20px;
+  right: -40px;
+  width: 150px;
+  text-align: center;
+  padding: 5px 0;
+  background-color: #fa3faf;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 4px;
+  transform: rotate(45deg);
+}
