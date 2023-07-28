@@ -1,4 +1,5 @@
-import { Button, DatePicker, Form, Select, Switch } from 'antd';
+import type { CollapseProps } from 'antd';
+import { Button, Collapse, DatePicker, Form, Select, Switch } from 'antd';
 import locale from 'antd/es/date-picker/locale/pt_BR';
 import TextArea from 'antd/es/input/TextArea';
 import React from 'react';
@@ -11,6 +12,14 @@ import * as S from './styles';
 
 const { RangePicker } = DatePicker;
 const CreatePackageSection = () => {
+  const [intinerary, setIntinerary] = React.useState<CollapseProps['items']>([
+    {
+      key: '1',
+      label: 'Dia 1',
+      children: <TextArea rows={4} />,
+    },
+  ]);
+
   const drivers = [
     {
       value: 'Marcio Souza',
@@ -101,7 +110,7 @@ const CreatePackageSection = () => {
         </S.DetailsSection>
 
         <S.DetailsSection>
-          <S.Subtitle> Detalhes Do Pacote </S.Subtitle>
+          <S.Subtitle> Detalhes Do Intinerário </S.Subtitle>
           <S.Row>
             <S.Collumn>
               <S.FieldLabel>Origem</S.FieldLabel>
@@ -121,6 +130,46 @@ const CreatePackageSection = () => {
               <S.FieldLabel>Ida e Volta</S.FieldLabel>
               <RangePicker locale={locale} format="DD/MM/YYYY" />
             </S.Collumn>
+          </S.Row>
+
+          <S.Subtitle>Descrição por dia: </S.Subtitle>
+
+          <S.Row>
+            <S.CollapseIntinerary>
+              <S.Collumn>
+                <Collapse items={intinerary} defaultActiveKey={['1']} />
+
+                <S.Row>
+                  <Button
+                    type="primary"
+                    onClick={() => {
+                      const newIntinerary = [...intinerary!];
+                      newIntinerary.push({
+                        key: `${intinerary!.length + 1}`,
+                        label: `Dia ${intinerary!.length + 1}`,
+                        children: <TextArea rows={4} />,
+                      });
+                      setIntinerary(newIntinerary);
+                    }}
+                  >
+                    Adicionar dia
+                  </Button>
+
+                  <Button
+                    type="primary"
+                    danger
+                    onClick={() => {
+                      if (intinerary!.length === 1) return;
+                      const newIntinerary = [...intinerary!];
+                      newIntinerary.pop();
+                      setIntinerary(newIntinerary);
+                    }}
+                  >
+                    Remover dia
+                  </Button>
+                </S.Row>
+              </S.Collumn>
+            </S.CollapseIntinerary>
           </S.Row>
         </S.DetailsSection>
       </Form>

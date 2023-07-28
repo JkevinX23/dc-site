@@ -118,3 +118,10 @@ export const Collumn = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const CollapseIntinerary = styled.div`
+  width: 100%;
+  ${Row} {
+    padding-top: 1rem;
+  }
+`;
